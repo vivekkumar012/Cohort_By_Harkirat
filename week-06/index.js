@@ -1,5 +1,11 @@
 import express from 'express'
 import jwt from 'jsonwebtoken'
+import path from 'path'
+import { fileURLToPath } from 'url';
+
+// these lines recreate __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const JWT_SECRET = "vivekkalaptop"
 
@@ -20,7 +26,12 @@ const users = [];
 //     return token;
 // }
 
-app.post("/signUp", function(req, res) {
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+
+app.post("/signup", function(req, res) {
     const username = req.body.username;
     const password = req.body.password;
 
@@ -63,27 +74,33 @@ app.post("/signIn", function(req, res) {
     }
 })
 
-app.get("/me", (req, res) => {
+//Middleware for authentication
+function auth(req, res, next) {
     const token = req.headers.token;
-    const decodedInformation = jwt.verify(token, JWT_SECRET);
-    const username = decodedInformation.username;
-    
+    const decodeData = jwt.verify(token, JWT_SECRET);
+    const username = decodeData.username;
+    if(username) {
+        req.username = username;
+        next();
+    } else {
+        res.json({
+            message: "You are not Logged in"
+        })
+    }
+}
+
+
+app.get("/me", auth, function(req, res){
     let foundUser = null;
     for(let i=0; i<users.length; i++) {
-        if(users[i].username == username) {
+        if(users[i].username === req.username) {
             foundUser = users[i];
         }
     }
+    res.json({
+        username: foundUser.username,
+        password: foundUser.password
+    })
+});
 
-    if(foundUser) {
-        res.json({
-            username: foundUser.username,
-            password: foundUser.password
-        })
-    } else {
-        res.status(401).json({
-            message : "Invalid Token"
-        })
-    }
-})
 app.listen(3000);
