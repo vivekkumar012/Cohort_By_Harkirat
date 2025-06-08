@@ -4,3 +4,6 @@ Link:- https://petal-estimate-4e9.notion.site/Fetch-API-2a5757a63dc247289fccb1fa
 
 week 6 :- Authentication
 Link:- https://petal-estimate-4e9.notion.site/Authentincation-a4b43c7cc1d14535a7b5b366080095fa
+
+week 7 :- DataBases And MongoDB
+Link:- https://petal-estimate-4e9.notion.site/Databases-and-MongoDb-1017dfd107358065a996cda5ed89682e
