@@ -3,6 +3,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import userRouter from "./routes/userRouter.js";
+import adminRouter from "./routes/adminRouter.js";
 
 const app = express();
 dotenv.config();
@@ -12,6 +13,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
 app.use("/api/v1/user", userRouter);
+app,use("/api/v1/admin", adminRouter);
 
 try {
     await mongoose.connect(process.env.MONGO_URL);
