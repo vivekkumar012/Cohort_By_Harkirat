@@ -10,3 +10,4 @@ Link:- https://petal-estimate-4e9.notion.site/Databases-and-MongoDb-1017dfd10735
 
 week 9 :- React
 Link:- https://www.canva.com/design/DAGStTo7_1Y/H-uoNlkdJ2X4P3LbOME45Q/edit
+Link:- https://petal-estimate-4e9.notion.site/React-Part-1-1177dfd1073580069172fc54e33929c0
