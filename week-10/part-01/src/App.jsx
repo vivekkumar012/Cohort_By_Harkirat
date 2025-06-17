@@ -1,19 +1,37 @@
-import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom'
 import './App.css'
 
 function App() {
 
-  return (
-      
+  return (  
     
     <BrowserRouter>
-      <Link to='/'>ALLEN</Link>
-      <Link to='/neet/class-11'>Class-11</Link>
       <Routes>
-        <Route path='/neet/class-11' element={<Class11Program />} />
-        <Route path='/' element={<Index />}/>
+        <Route path='/' element={<Layout />}>
+          <Route path='/neet/class-11' element={<Class11Program />} />
+          <Route path='/' element={<Index />}/>
+          <Route path='*' element={<ErrorPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
+  )
+}
+function Layout() {
+  return(
+    <div>
+      <Link to='/'>ALLEN</Link>
+      <Link to='/neet/class-11'>Class-11</Link>
+      <Outlet />
+      Footer
+    </div>
+  )
+}
+function ErrorPage() {
+  return(
+    <div>
+      Page not found
+     <Link to='/'><button>Go to home page</button></Link>
+    </div>
   )
 }
 
