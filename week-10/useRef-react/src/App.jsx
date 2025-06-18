@@ -8,6 +8,7 @@ function App() {
   // function focus() {
   //   inputRef.current.focus();
   // }
+  
   // Build a clock with start and stop
   //let timer = 0; // Every time components rerender so that stopClock function not working because it clear time 0 every re rendering
 
