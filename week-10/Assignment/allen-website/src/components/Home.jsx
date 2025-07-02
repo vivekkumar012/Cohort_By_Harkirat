@@ -10,7 +10,7 @@ function Home() {
         <div className='flex flex-row items-center space-x-4 p-6'>
             <Link to={"/"} className='text-2xl font-bold'>ALLEN</Link>
             <ul className='flex flex-row space-x-6 text-xl'>
-                    <li>Exams</li>
+                    <Link to={"/exam"}>Exams</Link>
                     <li>Programs</li>
                     <li>Scolarships</li>
                     <li>TestSeries</li>
