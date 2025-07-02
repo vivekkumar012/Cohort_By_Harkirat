@@ -11,10 +11,10 @@ function Home() {
             <Link to={"/"} className='text-2xl font-bold'>ALLEN</Link>
             <ul className='flex flex-row space-x-6 text-xl'>
                     <Link to={"/exam"}>Exams</Link>
-                    <li>Programs</li>
-                    <li>Scolarships</li>
-                    <li>TestSeries</li>
-                    <li>StudyMaterial</li>
+                    <Link to={"/programs"}>Programs</Link>
+                    <Link>Scolarships</Link>
+                    <Link>TestSeries</Link>
+                    <Link>StudyMaterial</Link>
             </ul>
         </div>
         <div className='space-x-4'>
