@@ -6,6 +6,7 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Exam from './components/Exam'
 import Programs from './components/Programs'
+import Scolarship from './components/Scolarship'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/exam' element={<Exam />} />
         <Route path='/programs' element={<Programs />} />
+        <Route path='/scolarship' element={<Scolarship />} />
       </Routes>
     </div>
   )

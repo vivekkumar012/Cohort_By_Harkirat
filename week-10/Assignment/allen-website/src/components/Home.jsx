@@ -12,7 +12,7 @@ function Home() {
             <ul className='flex flex-row space-x-6 text-xl'>
                     <Link to={"/exam"} role='button'>Exams</Link>
                     <Link to={"/programs"}>Programs</Link>
-                    <Link>Scolarships</Link>
+                    <Link to={"/scolarship"}>Scolarships</Link>
                     <Link>TestSeries</Link>
                     <Link>StudyMaterial</Link>
             </ul>
