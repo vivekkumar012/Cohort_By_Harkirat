@@ -18,11 +18,11 @@ function Signup() {
         <div className='flex flex-row items-center space-x-4 p-6'>
             <Link to={"/"} className='text-2xl font-bold'>ALLEN</Link>
             <ul className='flex flex-row space-x-6 text-xl'>
-                    <li>Exams</li>
-                    <li>Programs</li>
-                    <li>Scolarships</li>
-                    <li>TestSeries</li>
-                    <li>StudyMaterial</li>
+                    <Link to={"/exam"} role='button'>Exams</Link>
+                    <Link to={"/programs"}>Programs</Link>
+                    <Link>Scolarships</Link>
+                    <Link>TestSeries</Link>
+                    <Link>StudyMaterial</Link>
             </ul>
         </div>
         <div className='space-x-4'>
