@@ -50,3 +50,53 @@ if(legal) {
 } else {
     console.log("You are illegal")
 }
+
+interface People {
+    name: string;
+    age: number;
+    isLegal(): boolean;
+}
+
+class Manager implements People {
+    // name: string;
+    // age: number;
+
+    constructor(public name: string, public age: number) {
+        this.name = name;
+        this.age = age;
+    }
+    isLegal() {
+        return this.age > 18
+    }
+}
+
+let m = new Manager("vivek", 23);
+// console.log(m.name);
+// console.log(m.age);
+console.log(isLegal());
+
+
+//Type vs interface
+
+interface User2 {
+    name: string;
+    age: number;
+}
+
+type User = {
+    name: string,
+    age: number
+}
+
+// Union And Intersection
+type Employee = {
+    name: string;
+    startDate: Date;
+}
+
+type Manager2 = {
+    name: string;
+    department: string;
+}
+
+type TeamLead = Employee & Manager2;
