@@ -100,3 +100,16 @@ type Manager2 = {
 }
 
 type TeamLead = Employee & Manager2;
+
+
+//given the array of numbers extract max value
+
+function getMax(nums: number[]) {
+    let max = -10000000;
+    for(let i=0; i<nums.length; i++) {
+        if(nums[i] > max) {
+            max = nums[i];
+        }
+    }
+    return max;
+}
