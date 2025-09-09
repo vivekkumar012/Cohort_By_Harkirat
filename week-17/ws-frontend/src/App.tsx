@@ -1,14 +1,34 @@
 
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
 function App() {
-  function sendMsg() {
+  const [socket, setSocket] = useState();
 
+  const inputRef = useRef();
+
+  function sendMsg() {
+    if(!socket) {
+      return;
+    }
+    const message = inputRef.current.value;
+    //@ts-ignore
+    socket.send(message);
   }
+
+  useEffect(() => {
+    const ws = new WebSocket("ws://localhost:8080");
+    setSocket(ws);
+
+    ws.onmessage = (ev) => {
+      alert(ev.data);
+    }
+
+  }, [])
 
   return (
     <div>
-      <input type="text" placeholder="Messages....." />
+      <input ref={inputRef} type="text" placeholder="Messages....." />
       <button onClick={sendMsg}>Send</button>
     </div>
   )
